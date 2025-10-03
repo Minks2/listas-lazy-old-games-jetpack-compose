@@ -13,23 +13,27 @@ Este é um projeto acadêmico para a disciplina de desenvolvimento mobile, focad
 ##  Estrutura do Projeto
 ```
 app/
- ├── src/
- │   ├── main/
- │   │   ├── java/
- │   │   │   └── carreiras/com/github/fundamentos_jetpack_compose_listas_lazy/
- │   │   │        ├── MainActivity.kt         # Tela principal e lógica de UI
- │   │   │        ├── components/
- │   │   │        │    ├── GameCard.kt       # Componente visual para jogos
- │   │   │        │    └── StudioCard.kt     # Componente visual para estúdios
- │   │   │        ├── model/
- │   │   │        │    └── Game.kt           # Modelo de dados para jogos
- │   │   │        ├── repository/
- │   │   │        │    ├── GameRepository.kt # Funções de acesso e filtro de dados
- │   │   │        │    └── ...
- │   │   │        └── ui/theme/              # Temas e estilos
- │   │   └── res/                            # Recursos (layouts, strings, etc)
- │   └── ...
- └── ...
+ └── src/
+     └── main/
+         └── java/
+             └── M1nks2/com/github/listas-lazy-old-games-jetpack-compose/
+                 ├── MainActivity.kt         # Ponto de entrada. Apenas hospeda a tela.
+                 │
+                 ├── data/                   # Camada de Dados (antes 'repository')
+                 │   ├── model/
+                 │   │   └── Game.kt           # Modelos de dados (Studio, Game)
+                 │   └── repository/
+                 │       └── GameRepository.kt # Fornece os dados (de API, BD ou estático)
+                 │
+                 └── ui/                     # Camada de UI (Tudo relacionado à interface)
+                     ├── theme/              # Arquivos de tema (Color.kt, Theme.kt, etc.)
+                     │
+                     └── games/              # Pacote por funcionalidade: tela de jogos
+                         ├── GamesScreen.kt      # O Composable da tela, agora sem lógica de estado.
+                         ├── GamesViewModel.kt   # NOVO: Gerencia o estado e a lógica da tela.
+                         └── components/
+                             ├── GameCard.kt       # Componente reutilizável para o card de jogo.
+                             └── StudioCard.kt 
 ```
 
 ## Funcionalidades Implementadas
@@ -45,13 +49,13 @@ app/
 **Instrução:** Tire prints da sua aplicação e substitua os links abaixo. Você pode arrastar as imagens para a área de edição do `README.md` no site do GitHub que ele gera o link para você.
 
 #### Tela Principal (Sem Filtro)
-![Tela Principal](https://via.placeholder.com/300x600.png?text=Cole+aqui+o+print+da+tela+inicial)
+![Tela Principal](screenshots/TelaPrincipal.PNG)
 
 #### Tela com Filtro por Texto
-![Filtro por Texto](https://via.placeholder.com/300x600.png?text=Cole+aqui+o+print+filtrando+por+texto)
+![Tela Principal](screenshots/FiltroTexto.PNG)
 
 #### Tela com Filtro por Clique no Estúdio
-![Filtro por Clique](https://via.placeholder.com/300x600.png?text=Cole+aqui+o+print+filtrando+por+clique)
+![Tela Principal](screenshots/FiltroClique.PNG)
 
 ## Tecnologias Utilizadas
 
